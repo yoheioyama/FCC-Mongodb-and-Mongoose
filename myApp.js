@@ -1,6 +1,9 @@
 require('dotenv').config();
 
 let mongoose = require('mongoose');
+let uri = 'mongodb+srv://<USERNAME>:' + process.env.PW + '@xxxxxx.xxxxx.mongodb.net/<DATABASE>?retryWrites=true&w=majority'
+mongoose.connect(uri, { useNewUrlParser: true, useUnifiedTopology: true });
+
 let Person;
 
 const createAndSavePerson = (done) => {
