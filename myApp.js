@@ -1,8 +1,9 @@
 require('dotenv').config();
 
 let mongoose = require('mongoose');
-mongoose.connect(process.env.MONGO_URI);
-let uri = 'mongodb+srv://yoheioyama:<password>@cluster0.qihxg.mongodb.net/myFirstDatabase?retryWrites=true&w=majority'
+let uri = 'mongodb+srv://yoheioyama:' + process.env.PW + '@cluster0.qihxg.mongodb.net/myFirstDatabase?retryWrites=true&w=majority'
+mongoose.connect(<uri, { useNewUrlParser: true, useUnifiedTopology: true });
+
 
 let Person;
 
